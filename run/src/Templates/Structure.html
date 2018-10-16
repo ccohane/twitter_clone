@@ -1,0 +1,46 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="buy_high.jpg">
+
+    <title>Dopest Twitter Ever</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap core CSS--> 
+    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0 " href="/dashboard">Tweeter</a>
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap">
+              <a class="nav-link" href="/profile">{{Username}} Profile</a>
+          </li>
+          <li class="nav-item text-nowrap">
+            <a class="nav-link" href="/logout">Sign out</a>
+          </li>
+        </ul>
+    </nav>
+  
+      <div class="container-fluid">
+          
+          {% block main %}
+
+          {% endblock main%}
+
+
+          {% block additional_javascript_dependencies %}
+          
+          {% endblock additional_javascript_dependencies%}
+
+
+      </div>
+  
+    </body>
+</html>

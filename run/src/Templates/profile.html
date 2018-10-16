@@ -1,0 +1,50 @@
+{% extends "Structure.html" %}
+{% block main %}
+        <br>
+        
+          <div class="row mt-5">
+                <div class="ml-sm-auto col-lg-2 px-4">
+                </div>
+                <div class="ml-sm-auto col-lg-8 px-4">
+                        
+                    <form action="/profile" method="post" >
+                        <img class="mb-4" src="tweet.jpeg" alt="">
+                        <h1 class="h1 mb-3 font-weight-normal">Write a Tweet</h1>
+                        <br>
+                        <input name="tweet" type="text" id="tweet" class="form-control" placeholder="Post Something" required"" autofocus"">
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+                        <br>
+                    </form>
+              </div>
+              <div class="ml-sm-auto col-lg-2 px-4">
+                    <img class="mb-4" src="tweet.jpeg" alt="">
+            </div>
+          </div>
+
+{% for x in newsFeed %}
+<div class="row mt-2">
+  <div class="ml-sm-auto col-lg-2 px-4">
+  </div>
+  <div class="ml-sm-auto col-lg-8 px-4">
+    
+        <h3 >{{ x[1] }}</h3>
+        <h5>{{ x[2] }}</h5> 
+        
+        <small>Date: {{ x[3] }}</small>
+
+        <form action="/retweeter" method="post">
+          <input name="username" type="hidden" value="{{ x[1] }}">
+          <input name="payload" type="hidden" value="{{ x[2] }}">
+          <input name="timestamp" type="hidden" value="{{ x[3] }}">
+          <input name="arb_guid" type="hidden" value="{{ x[0] }}">
+          <button name="dabutton" type="submit" value="{{ x[0] }}">Retweet</button>
+      </form>
+    <hr>
+  </div>
+  <div class="ml-sm-auto col-lg-2 px-4">
+    </div>
+</div>
+
+{% endfor%}
+{% endblock main %}
